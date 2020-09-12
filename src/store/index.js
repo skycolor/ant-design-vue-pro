@@ -4,10 +4,10 @@ import Vuex from 'vuex'
 import app from './modules/app'
 import user from './modules/user'
 
-// default router permission control
+// 默认路由权限控制
 import permission from './modules/permission'
 
-// dynamic router permission control (Experimental)
+// 交互路由控制
 // import permission from './modules/async-router'
 import getters from './getters'
 

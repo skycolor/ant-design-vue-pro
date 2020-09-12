@@ -1,4 +1,4 @@
-// with polyfills
+// babel最新语法适配
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
@@ -8,26 +8,28 @@ import router from './router'
 import store from './store/'
 import { VueAxios } from './utils/request'
 import ProLayout, { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
-import themePluginConfig from '../config/themePluginConfig'
 
-// mock
-// WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.
+// mock接口
 import './mock'
 
+// 给vuex赋默认值
 import bootstrap from './core/bootstrap'
+// 引入and部分组件、vue指令、
 import './core/lazy_use'
-import './permission' // permission control
-import './utils/filter' // global filter
+// 路由的before和after处理
+import './permission'
+// 全局vue过滤器
+import './utils/filter'
+// 全局css
 import './global.less'
 
 Vue.config.productionTip = false
 
-// mount axios to `Vue.$http` and `this.$http`
+// 全局在vue原型链上加入$http的请求方式
 Vue.use(VueAxios)
+// 注册pro-layout的UI
 Vue.component('pro-layout', ProLayout)
 Vue.component('page-header-wrapper', PageHeaderWrapper)
-
-window.umi_plugin_ant_themeVar = themePluginConfig.theme
 
 new Vue({
   router,

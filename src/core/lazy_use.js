@@ -48,7 +48,7 @@ import {
 } from 'ant-design-vue'
 import Viser from 'viser-vue'
 
-// ext library
+// 用于图片裁剪的组件
 import VueCropper from 'vue-cropper'
 import Dialog from '@/components/Dialog'
 import MultiTab from '@/components/MultiTab'
@@ -106,11 +106,10 @@ Vue.prototype.$success = Modal.success
 Vue.prototype.$error = Modal.error
 Vue.prototype.$warning = Modal.warning
 
+// 组件二次封装注册
 Vue.use(Viser)
-Vue.use(Dialog) // this.$dialog func
+Vue.use(Dialog)
 Vue.use(MultiTab)
 Vue.use(PageLoading)
 Vue.use(PermissionHelper)
 Vue.use(VueCropper)
-
-process.env.NODE_ENV !== 'production' && console.warn('[antd-pro] NOTICE: Antd use lazy-load.')

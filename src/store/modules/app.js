@@ -10,9 +10,7 @@ import {
   TOGGLE_HIDE_HEADER,
   TOGGLE_COLOR,
   TOGGLE_WEAK,
-  TOGGLE_MULTI_TAB,
-  // i18n
-  APP_LANGUAGE
+  TOGGLE_MULTI_TAB
 } from '@/store/mutation-types'
 
 const app = {
@@ -70,11 +68,6 @@ const app = {
     [TOGGLE_WEAK]: (state, mode) => {
       state.weak = mode
       storage.set(TOGGLE_WEAK, mode)
-    },
-    [APP_LANGUAGE]: (state, lang, antd = {}) => {
-      state.lang = lang
-      state._antLocale = antd
-      storage.set(APP_LANGUAGE, lang)
     },
     [TOGGLE_MULTI_TAB]: (state, bool) => {
       storage.set(TOGGLE_MULTI_TAB, bool)

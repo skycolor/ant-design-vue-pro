@@ -1,3 +1,4 @@
+// 在storage和vuex中存值
 import store from '@/store'
 import storage from 'store'
 import {

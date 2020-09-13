@@ -6,6 +6,7 @@ const RouteView = {
   render: (h) => h('router-view')
 }
 
+// 异步获取的路由
 export const asyncRouterMap = [
 
   {
@@ -50,10 +51,7 @@ export const asyncRouterMap = [
   }
 ]
 
-/**
- * 基础路由
- * @type { *[] }
- */
+// 基础路由
 export const constantRouterMap = [
   {
     path: '/user',

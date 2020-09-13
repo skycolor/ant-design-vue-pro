@@ -12,7 +12,6 @@
     </v-chart>
   </div>
 </template>
-
 <script>
 export default {
   name: 'Bar',

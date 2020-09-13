@@ -10,7 +10,6 @@
     </template>
   </global-footer>
 </template>
-
 <script>
 import { GlobalFooter } from '@ant-design-vue/pro-layout'
 

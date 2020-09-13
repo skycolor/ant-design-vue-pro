@@ -11,7 +11,6 @@
     </a-tabs>
   </div>
 </template>
-
 <script>
 import icons from './icons'
 

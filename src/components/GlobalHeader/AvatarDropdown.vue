@@ -26,7 +26,6 @@
     <a-spin size="small" :style="{ marginLeft: 8, marginRight: 8 }" />
   </span>
 </template>
-
 <script>
 import { Modal } from 'ant-design-vue'
 export default {

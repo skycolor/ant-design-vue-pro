@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-// base library
+// ant desgin基础库
 import {
   ConfigProvider,
   Layout,
@@ -46,13 +46,8 @@ import {
   message,
   notification
 } from 'ant-design-vue'
-import Viser from 'viser-vue'
 
-// 用于图片裁剪的组件
-import VueCropper from 'vue-cropper'
 import Dialog from '@/components/Dialog'
-import MultiTab from '@/components/MultiTab'
-import PageLoading from '@/components/PageLoading'
 import PermissionHelper from '@/utils/helper/permission'
 import './directives/action'
 
@@ -106,10 +101,5 @@ Vue.prototype.$success = Modal.success
 Vue.prototype.$error = Modal.error
 Vue.prototype.$warning = Modal.warning
 
-// 组件二次封装注册
-Vue.use(Viser)
 Vue.use(Dialog)
-Vue.use(MultiTab)
-Vue.use(PageLoading)
 Vue.use(PermissionHelper)
-Vue.use(VueCropper)

@@ -9,7 +9,6 @@ import { cutStrByFullLength, getStrFullLength } from '@/components/_util/util'
       wordWrap: 'break-word',
     };
   */
-
 export default {
   name: 'Ellipsis',
   components: {

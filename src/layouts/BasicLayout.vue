@@ -16,24 +16,33 @@
     <template v-slot:footerRender>
       <global-footer />
     </template>
-    <router-view />
+    <!-- layout content -->
+    <a-layout-content :style="{ height: '100%', paddingTop: fixedHeader ? '64px' : '0' }">
+      <multi-tab v-if="multiTab"></multi-tab>
+      <transition name="page-transition">
+        <route-view />
+      </transition>
+    </a-layout-content>
   </pro-layout>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import { CONTENT_WIDTH_TYPE, SIDEBAR_TYPE, TOGGLE_MOBILE_TYPE } from '@/store/mutation-types'
-
+import { mixin, mixinDevice } from '@/utils/mixin'
 import defaultSettings from '@/config/defaultSettings'
 import RightContent from '@/components/GlobalHeader/RightContent'
 import GlobalFooter from '@/components/GlobalFooter'
 import LogoSvg from '../assets/logo.svg?inline'
+import RouteView from './RouteView'
 
 export default {
   name: 'BasicLayout',
+  mixins: [mixin, mixinDevice],
   components: {
     RightContent,
-    GlobalFooter
+    GlobalFooter,
+    RouteView
   },
   data () {
     return {
@@ -64,7 +73,6 @@ export default {
       },
       // 媒体查询
       query: {},
-
       // 是否手机模式
       isMobile: false
     }

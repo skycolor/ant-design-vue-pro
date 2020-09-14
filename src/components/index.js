@@ -5,6 +5,7 @@ import NumberInfo from '@/components/NumberInfo'
 import Trend from '@/components/Trend'
 import STable from '@/components/Table'
 import IconSelector from '@/components/IconSelector'
+import MultiTab from '@/components/MultiTab'
 
 import Dialog from '@/components/Dialog'
 
@@ -16,5 +17,6 @@ export {
   NumberInfo,
   STable,
   IconSelector,
-  Dialog
+  Dialog,
+  MultiTab
 }

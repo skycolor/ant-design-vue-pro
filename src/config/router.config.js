@@ -1,10 +1,5 @@
 // eslint-disable-next-line
-import { UserLayout, BasicLayout, BlankLayout } from '@/layouts'
-
-const RouteView = {
-  name: 'RouteView',
-  render: (h) => h('router-view')
-}
+import { UserLayout, BasicLayout,RouteView } from '@/layouts'
 
 // 异步获取的路由
 export const asyncRouterMap = [
@@ -14,8 +9,24 @@ export const asyncRouterMap = [
     name: 'index',
     component: BasicLayout,
     meta: { title: '主页' },
-    redirect: '/exception/403',
+    redirect: '/dashboard/workplace',
     children: [
+      // 首页
+      {
+        path: '/dashboard',
+        name: 'dashboard',
+        redirect: '/dashboard/workplace',
+        component: RouteView,
+        meta: { title: '工作台', keepAlive: true, icon: 'table', permission: [ 'dashboard' ] },
+        children: [
+          {
+            path: '/dashboard/workplace',
+            name: 'Workplace',
+            component: () => import('@/views/dashboard/Workplace'),
+            meta: { title: '首页', keepAlive: true, permission: [ 'dashboard' ] }
+          }
+        ]
+      },
       // 异常页面
       {
         path: '/exception',

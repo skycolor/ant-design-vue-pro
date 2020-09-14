@@ -49,6 +49,7 @@ import {
 
 import Dialog from '@/components/Dialog'
 import PermissionHelper from '@/utils/helper/permission'
+import MultiTab from '@/components/MultiTab'
 import './directives/action'
 
 Vue.use(ConfigProvider)
@@ -103,3 +104,4 @@ Vue.prototype.$warning = Modal.warning
 
 Vue.use(Dialog)
 Vue.use(PermissionHelper)
+Vue.use(MultiTab)
